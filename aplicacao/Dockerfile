@@ -28,4 +28,7 @@ RUN yarn install
 
 COPY . ./
 
+EXPOSE 3000
+
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
 RUN ["chmod", "+x", "entrypoint.sh"]
