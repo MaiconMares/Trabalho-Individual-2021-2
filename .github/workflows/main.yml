@@ -19,6 +19,7 @@ jobs:
         env:
           POSTGRES_USER: tesla
           POSTGRES_PASSWORD: tesla
+          POSTGRES_DB: biblioteca_pessoal_test
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
