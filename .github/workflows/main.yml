@@ -45,6 +45,7 @@ jobs:
           sudo apt-get update
           sudo apt-get -yqq install libpq-dev
           gem install bundler
+          cd aplicacao/
           bundle install --jobs 4 --retry 3
 
       - name: Create Database
@@ -64,6 +65,7 @@ jobs:
           TEST_DB_NAME: biblioteca_pessoal_test
           RAILS_ENV: test
         run: |
+          cd aplicacao/
           bundle exec rubocop --config .rubocop.yml --parallel
 
       - name: Run Tests
@@ -74,6 +76,7 @@ jobs:
           RAILS_ENV: test
           DISABLE_SPRING: 1
         run: |
+          cd aplicacao/
           bundle exec rails db:environment:set RAILS_ENV=test
           bundle exec rails db:schema:load
           bundle exec rails test:vendors
@@ -92,7 +95,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ../../aplicacao
+          context: ./aplicacao
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/gcestrabalho:latest
