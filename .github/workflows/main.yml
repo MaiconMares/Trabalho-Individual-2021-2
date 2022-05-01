@@ -47,7 +47,8 @@ jobs:
           TEST_DB_NAME: biblioteca_pessoal_test
           RAILS_ENV: test
         run: |
-          ../../bin/rails db:create
+          cd aplicacao/
+          bin/rails db:create
 
       - name: Run Rubocop
         env:
