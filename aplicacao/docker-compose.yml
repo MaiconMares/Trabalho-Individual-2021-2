@@ -3,13 +3,15 @@ services:
     db:
         image: postgres
         container_name: database
+        restart: always
         volumes:
-            - ./tmp/db:/var/lib/postgresql/data
+            - postgres_data:/var/lib/postgresql/data
             - ./init.sql:/docker-entrypoint-initdb.d/init.sql
         environment:
+            POSTGRES_USER: tesla
             POSTGRES_PASSWORD: tesla
-        expose:
-            - "5432"
+        ports:
+            - "5432:5432"
     app:
         build:
             context: .
@@ -17,8 +19,8 @@ services:
         container_name: app
         volumes:
             - .:/app
-        expose:
-            - "3000"
+        ports:
+            - "3000:3000"
         depends_on:
             - db
     nginx:
@@ -34,3 +36,5 @@ services:
             - .:/app
         links:
             - app
+volumes:
+    postgres_data:

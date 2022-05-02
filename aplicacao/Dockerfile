@@ -30,5 +30,8 @@ COPY . ./
 
 EXPOSE 3000
 
+COPY entrypoint.sh /usr/bin
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT [ "entrypoint.sh" ]
+
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
-RUN ["chmod", "+x", "entrypoint.sh"]
