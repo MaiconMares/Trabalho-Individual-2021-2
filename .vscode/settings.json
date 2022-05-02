@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": "file:///home/v360/Desktop/GCES/Trabalho-Individual-2021-2/.github/workflows/deploy.yml"
+    }
+}

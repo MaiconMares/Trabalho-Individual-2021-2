@@ -1,6 +1,8 @@
 #!/bin/bash
 FROM ruby:3.0.0
 
+WORKDIR /aplicacao
+
 ENV BUNDLER_VERSION=2.2.3
 
 RUN curl https://deb.nodesource.com/setup_12.x | bash
@@ -10,8 +12,6 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 RUN apt-get install -y apt-transport-https ca-certificates
 
 RUN apt-get update -qq && apt-get install -y nodejs yarn postgresql-client
-
-WORKDIR /app
 
 #FROM library/postgres
 COPY init.sql /docker-entrypoint-initdb.d/
