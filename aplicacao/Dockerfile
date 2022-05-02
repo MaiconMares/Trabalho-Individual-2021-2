@@ -34,4 +34,4 @@ COPY entrypoint.sh /usr/bin
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT [ "entrypoint.sh" ]
 
-CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+CMD ["rails", "server", "-b", "0.0.0.0"]
