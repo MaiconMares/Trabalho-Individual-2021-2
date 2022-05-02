@@ -43,4 +43,4 @@ jobs:
       - name: Lint
         working-directory: ./aplicacao
         run: |
-          docker-compose run app bash -c "bundle exec rubocop --config .rubocop.yml --parallel"
+          docker-compose run app bash -c "bundle install; bundle exec rubocop --config .rubocop.yml --parallel"
