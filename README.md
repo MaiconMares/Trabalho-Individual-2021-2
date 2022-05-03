@@ -78,3 +78,36 @@ Alguns trabalhos de trabalhos anteriores:
 - [2020/2](https://github.com/FGA-GCES/Trabalho-Individual-2020-2)
 - [2021/1 - Parte 1](https://github.com/FGA-GCES/Workshop-Docker-Entrega-01)
 - [2021/1 - Parte 2](https://github.com/FGA-GCES/Workshop-Docker-Entrega-02)
+
+
+## Instruções para utilização
+### Pré-requisitos
+- Docker
+- Docker Compose
+- Git
+
+### 1. Realizar clone do repositório
+git clone https://github.com/MaiconMares/Trabalho-Individual-2021-2.git
+
+### 2. Fazer build da imagem
+```bash
+sudo docker-compose build
+```
+Ou para versões mais recentes do compose:
+```bash
+sudo docker compose build
+```
+
+### 3. Subir os containers
+```bash
+sudo docker-compose up```
+ou
+
+```bash
+sudo docker compose up
+```
+
+### 4. Abrir o servidor
+Repare que nessa etapa o banco já terá sído criado e migrado. Basta apenas ir no navegador de sua preferência e acessar a url: http://localhost
+
+### Comando alternativos
