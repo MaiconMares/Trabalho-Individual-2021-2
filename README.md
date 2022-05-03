@@ -110,7 +110,10 @@ sudo docker compose up
 ```
 
 ### 4. Abrir o servidor
-Repare que nessa etapa o banco já terá sído criado e migrado. Basta apenas ir no navegador de sua preferência e acessar a url: http://localhost
+Repare que nessa etapa o banco já terá sído criado e migrado. Basta apenas ir no navegador de sua preferência e acessar a
+aplicação. As urls são:
+- aplicação: http://0.0.0.0:3000
+- nginx: http://0.0.0.0:80
 
 ### Comando alternativos
 - Criar banco de dados, rodar migrações e executar seed:
