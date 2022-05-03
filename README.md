@@ -79,13 +79,11 @@ Alguns trabalhos de trabalhos anteriores:
 - [2021/1 - Parte 1](https://github.com/FGA-GCES/Workshop-Docker-Entrega-01)
 - [2021/1 - Parte 2](https://github.com/FGA-GCES/Workshop-Docker-Entrega-02)
 
-
 ## Instruções para utilização
 ### Pré-requisitos
 - Docker
 - Docker Compose
 - Git
-
 ### 1. Realizar clone do repositório
 git clone https://github.com/MaiconMares/Trabalho-Individual-2021-2.git
 
@@ -131,9 +129,17 @@ Pode ser mais fácil executar comandos separadamente dentro do container, para i
 ```bash
 sudo docker exec -it <nome-container> bash
 ```
+**Obs.**: Em alguns computadores pessoais pode não ser necessário utilizar sudo se o docker e docker compose já estiverem incluídos em um grupo.
+
 Nome dos containers:
 <ol>
   <li>app: container da aplicação</li>
   <li>database: container do banco de dados PostgreSQL</li>
   <li>nginx: container do servidor Nginx</li>
 </ol>
+
+### Informações úteis
+- Usuário do banco: tesla
+- Senha do banco: tesla
+
+**Nota**: Isso se aplica a todos os bancos.

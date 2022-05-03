@@ -7,44 +7,68 @@ Sistema para registro de livros pessoais
 - Rails `7.0.2.3`
 - Bundler
 
-### Depndências
-Banco de dados Postgres
+## Instruções para utilização
+### Pré-requisitos
+- Docker
+- Docker Compose
+- Git
 
-### Configuração do Projeto
+### 1. Realizar clone do repositório
+git clone https://github.com/MaiconMares/Trabalho-Individual-2021-2.git
+
+### 2. Fazer build da imagem
+```bash
+sudo docker-compose build
 ```
-bundle install
+Ou para versões mais recentes do compose:
+
+```bash
+sudo docker compose build
 ```
 
-### Configuração do Banco
-Criar o banco com o usuario `postgres` e senha `postgres`
+### 3. Subir os containers
 
-### Iniciatlização, criação do Banco com seed
+```bash
+sudo docker-compose up
 ```
-rails db:create
-rails db:migrate
-rails db:seed
+
+ou
+
+```bash
+sudo docker compose up
+```
+
+### 4. Abrir o servidor
+Repare que nessa etapa o banco já terá sído criado e migrado. Basta apenas ir no navegador de sua preferência e acessar a url: http://localhost
+
+### Comando alternativos
+- Criar banco de dados, rodar migrações e executar seed:
+```bash
+sudo docker-compose run app rails db:setup
 ```
 
 ou 
 
-```
-rails db:setup
-```
-
-### Reset do banco e seed
-```
-rails db:reset
+```bash
+sudo docker compose run app rails db:setup
 ```
 
-### Como rodar a aplicação
-Para executar a aplicação com o servidor web embutido basta rodar o comando abaixo que a mesma será inicializada no localhost na porta 3000.
+- Rodar comandos dentro de um container:
+Pode ser mais fácil executar comandos separadamente dentro do container, para isto rode:
+```bash
+sudo docker exec -it <nome-container> bash
 ```
-rails server
-```
+**Obs.**: Em alguns computadores pessoais pode não ser necessário utilizar sudo se o docker e docker compose já estiverem incluídos em um grupo.
 
-### Como rodar testes
-```
-rails db:reset
-rspec
-```
+Nome dos containers:
+<ol>
+  <li>app: container da aplicação</li>
+  <li>database: container do banco de dados PostgreSQL</li>
+  <li>nginx: container do servidor Nginx</li>
+</ol>
 
+### Informações úteis
+- Usuário do banco: tesla
+- Senha do banco: tesla
+
+**Nota**: Isso se aplica a todos os bancos.
