@@ -94,13 +94,17 @@ git clone https://github.com/MaiconMares/Trabalho-Individual-2021-2.git
 sudo docker-compose build
 ```
 Ou para versões mais recentes do compose:
+
 ```bash
 sudo docker compose build
 ```
 
 ### 3. Subir os containers
+
 ```bash
-sudo docker-compose up```
+sudo docker-compose up
+```
+
 ou
 
 ```bash
@@ -111,3 +115,25 @@ sudo docker compose up
 Repare que nessa etapa o banco já terá sído criado e migrado. Basta apenas ir no navegador de sua preferência e acessar a url: http://localhost
 
 ### Comando alternativos
+- Criar banco de dados, rodar migrações e executar seed:
+```bash
+sudo docker-compose run app rails db:setup
+```
+
+ou 
+
+```bash
+sudo docker compose run app rails db:setup
+```
+
+- Rodar comandos dentro de um container:
+Pode ser mais fácil executar comandos separadamente dentro do container, para isto rode:
+```bash
+sudo docker exec -it <nome-container> bash
+```
+Nome dos containers:
+<ol>
+  <li>app: container da aplicação</li>
+  <li>database: container do banco de dados PostgreSQL</li>
+  <li>nginx: container do servidor Nginx</li>
+</ol>
