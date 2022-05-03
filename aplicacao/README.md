@@ -53,6 +53,17 @@ ou
 sudo docker compose run app rails db:setup
 ```
 
+- Derrubar containers
+```bash
+sudo docker-compose down
+```
+
+ou 
+
+```bash
+sudo docker compose down
+```
+
 - Rodar comandos dentro de um container:
 Pode ser mais fácil executar comandos separadamente dentro do container, para isto rode:
 ```bash
